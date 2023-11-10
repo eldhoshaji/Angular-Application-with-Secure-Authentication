@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'src/styles/typography.scss';
+@import 'src/styles/primeng.scss';
+// @import 'src/styles/tailwind.scss';
+@import 'src/styles/variables.scss';
+
+@import "primeng/resources/themes/bootstrap4-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+* {
+  font-family: 'Lao';
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+}

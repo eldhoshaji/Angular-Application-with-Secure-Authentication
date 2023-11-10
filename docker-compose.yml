@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    networks:
+      - my-network
+
+networks:
+  my-network:

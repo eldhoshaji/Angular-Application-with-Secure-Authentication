@@ -1,0 +1,50 @@
+<div class="container">
+
+  <div class="panel">
+    <p-card class="card">
+      <div class="header">
+        <div class="greetings">Welcome! 👋</div>
+        <div class="title">Create new account</div>
+      </div>
+
+      <div [ngSwitch]="section">
+
+        <div *ngSwitchCase="1" class="section">
+          <div class="input">
+            <label htmlFor="firstName">First Name</label>
+            <input pInputText id="firstName"  [(ngModel)]="firstName" />
+          </div>
+          <div class="input">
+            <label htmlFor="lastName">Last Name</label>
+            <input pInputText id="lastName"  [(ngModel)]="lastName" />
+          </div>
+          <div class="input">
+            <label htmlFor="email">Your email</label>
+            <input pInputText id="email"  [(ngModel)]="email" />
+          </div>
+          <p-button [label]="buttonLabel" (click)="pageChange(2)"></p-button>
+
+          <div class="signup">Account already exist? <span class="link" (click)="navToLogin()">Login</span></div>
+
+        </div>
+
+        <div *ngSwitchCase="2" class="section">
+          <div class="input">
+            <label htmlFor="password">Password</label>
+            <p-password [(ngModel)]="password" [toggleMask]="true"></p-password>
+          </div>
+          <div class="input">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <p-password [(ngModel)]="confirmPassword" [toggleMask]="true"></p-password>
+          </div>
+          <div class="btns">
+            <p-button [label]="buttonLabel" styleClass="p-button-danger" (click)="pageChange(1)"></p-button>
+            <p-button label="REGISTER" (click)="onSave()"></p-button>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+    </p-card>
+  </div>
+</div>
