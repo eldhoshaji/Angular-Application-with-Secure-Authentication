@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="panel">
+      <p-card class="card">
+        <div class="header">
+          <div class="greetings">Welcome back! 👋</div>
+          <div class="title">Sign in to your account</div>
+        </div>
+        <div class="input">
+          <label htmlFor="email">Your email</label>
+          <input pInputText id="email"  [(ngModel)]="email" />
+        </div>
+        <div class="input">
+          <label htmlFor="password">Password</label>
+          <p-password [(ngModel)]="password" [toggleMask]="true"></p-password>
+        </div>
+        <p-button label="CONTINUE" (click)="onSave()"></p-button>
+        <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+        <div class="signup">New User? <span class="link" (click)="navToRegister()">Create an account</span></div>
+      </p-card>
+    </div>
+</div>

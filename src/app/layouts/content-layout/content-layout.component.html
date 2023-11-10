@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="sidebar">
+    <div class="icon">
+      LOGO
+    </div>
+    <div class="items" *ngFor="let item of items">
+      <div [routerLink]="['/home', item.route]">
+        <app-menu-item [title]="item.name" [icon]="item.icon"></app-menu-item>
+      </div>
+    </div>
+    <div (click)="logout()">
+      <app-menu-item title="Logout" [icon]="faSignOut"></app-menu-item>
+    </div>
+  </div>
+  <div class="main">
+    <div class="header">
+      <div class="title">
+       Dashboard <span *ngIf="headerTitle">/ {{headerTitle}}</span>
+      </div>
+      <div class="user">
+        <img src="../../../assets/photo.png" width="30">
+        <div>{{userStore.user?.first_name + ' ' + userStore.user?.last_name}}</div>
+      </div>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
